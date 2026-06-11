@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm,
   },
   tagline: {
-    fontSize: FONTS.sizes.lg,
+    fontSize: 16,
     color: 'rgba(255,255,255,0.85)',
     marginTop: SPACING.xs,
     letterSpacing: 1,
@@ -133,8 +133,8 @@ const styles = StyleSheet.create({
     gap: SPACING.lg,
   },
   statItem: { alignItems: 'center' },
-  statNumber: { fontSize: FONTS.sizes.xl, fontWeight: '700', color: COLORS.white },
-  statLabel: { fontSize: FONTS.sizes.xs, color: 'rgba(255,255,255,0.8)', marginTop: 2 },
+  statNumber: { fontSize: 20, fontWeight: '700', color: COLORS.white },
+  statLabel: { fontSize: 11, color: 'rgba(255,255,255,0.8)', marginTop: 2 },
   statDivider: { width: 1, backgroundColor: 'rgba(255,255,255,0.3)' },
   bottomSection: {
     backgroundColor: COLORS.white,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     paddingBottom: SPACING.xxl,
   },
   bottomTitle: {
-    fontSize: FONTS.sizes.lg,
+    fontSize: 16,
     fontWeight: '600',
     color: COLORS.text,
     textAlign: 'center',
@@ -162,11 +162,11 @@ const styles = StyleSheet.create({
   },
   btnIcon: { width: 36 },
   tradesmanBtnTitle: {
-    fontSize: FONTS.sizes.lg,
+    fontSize: 16,
     fontWeight: '600',
     color: COLORS.text,
   },
-  tradesmanBtnSubtitle: { fontSize: FONTS.sizes.sm, color: COLORS.textLight, marginTop: 2 },
+  tradesmanBtnSubtitle: { fontSize: 13, color: COLORS.textLight, marginTop: 2 },
   customerBtn: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -176,9 +176,9 @@ const styles = StyleSheet.create({
     gap: SPACING.md,
   },
   customerBtnTitle: {
-    fontSize: FONTS.sizes.lg,
+    fontSize: 16,
     fontWeight: '600',
     color: COLORS.white,
   },
-  customerBtnSubtitle: { fontSize: FONTS.sizes.sm, color: 'rgba(255,255,255,0.85)', marginTop: 2 },
+  customerBtnSubtitle: { fontSize: 13, color: 'rgba(255,255,255,0.85)', marginTop: 2 },
 });

@@ -60,7 +60,7 @@ export default function RoleSelectScreen() {
             <View style={styles.featureList}>
               <FeatureItem text="İlanları gör ve teklif ver" />
               <FeatureItem text="Profilini sergile" />
-              <FeatureItem text="Güvenli ödeme al" />
+              <FeatureItem text="Güvenli öde al" />
             </View>
             {selectedRole === UserRole.TRADESMAN && (
               <View style={styles.checkBadge}>
@@ -103,12 +103,12 @@ const styles = StyleSheet.create({
   content: { padding: SPACING.lg, paddingTop: SPACING.md },
   backBtn: { marginBottom: SPACING.md, width: 40, height: 40, justifyContent: 'center' },
   title: {
-    fontSize: FONTS.sizes.xxl,
+    fontSize: 24,
     fontWeight: '700',
     color: COLORS.text,
     marginBottom: SPACING.xs,
   },
-  subtitle: { fontSize: FONTS.sizes.md, color: COLORS.textLight, marginBottom: SPACING.xl },
+  subtitle: { fontSize: 15, color: COLORS.textLight, marginBottom: SPACING.xl },
   cardsRow: { flexDirection: 'row', gap: SPACING.md, marginBottom: SPACING.xl },
   card: {
     flex: 1,
@@ -130,21 +130,21 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   cardTitle: {
-    fontSize: FONTS.sizes.lg,
+    fontSize: 16,
     fontWeight: '700',
     color: COLORS.text,
     textAlign: 'center',
     marginBottom: SPACING.xs,
   },
   cardDesc: {
-    fontSize: FONTS.sizes.sm,
+    fontSize: 13,
     color: COLORS.textLight,
     textAlign: 'center',
     marginBottom: SPACING.md,
   },
   featureList: { gap: SPACING.xs },
   featureItem: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  featureText: { fontSize: FONTS.sizes.sm, color: COLORS.text, flex: 1 },
+  featureText: { fontSize: 12, color: COLORS.text, flex: 1 },
   checkBadge: { position: 'absolute', top: 8, right: 8 },
   continueBtn: {
     backgroundColor: COLORS.primary,
@@ -157,11 +157,11 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
   },
   continueBtnText: {
-    fontSize: FONTS.sizes.lg,
+    fontSize: 16,
     fontWeight: '600',
     color: COLORS.white,
   },
   registerLink: { alignItems: 'center', paddingVertical: SPACING.sm },
-  registerLinkText: { fontSize: FONTS.sizes.md, color: COLORS.textLight },
+  registerLinkText: { fontSize: 15, color: COLORS.textLight },
   registerLinkBold: { color: COLORS.primary, fontWeight: '600' },
 });

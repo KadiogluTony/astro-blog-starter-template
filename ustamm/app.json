@@ -11,17 +11,20 @@
       "resizeMode": "contain",
       "backgroundColor": "#FF6B35"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ustamm.app",
-      "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "Yakınınızdaki ustaları görmek için konumunuza ihtiyacımız var.",
-        "NSLocationAlwaysUsageDescription": "Yakınınızdaki ustaları görmek için konumunuza ihtiyacımız var.",
-        "NSCameraUsageDescription": "İş ilanlarınız için fotoğraf çekebilirsiniz.",
-        "NSPhotoLibraryUsageDescription": "İş ilanlarınız için galeriden fotoğraf seçebilirsiniz."
-      },
       "config": {
-        "googleMapsApiKey": "$EXPO_PUBLIC_GOOGLE_MAPS_API_KEY"
+        "googleMapsApiKey": "$(EXPO_PUBLIC_GOOGLE_MAPS_API_KEY)"
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Yakınındaki ustaları ve işleri görmek için konum bilginize ihtiyaç duyuyoruz.",
+        "NSLocationAlwaysUsageDescription": "Yakınındaki ustaları ve işleri görmek için konum bilginize ihtiyaç duyuyoruz.",
+        "NSCameraUsageDescription": "Profil ve iş fotoğrafları eklemek için kameraya ihtiyaç duyuyoruz.",
+        "NSPhotoLibraryUsageDescription": "Profil ve iş fotoğrafları eklemek için galeri erişimine ihtiyaç duyuyoruz."
       }
     },
     "android": {
@@ -30,6 +33,11 @@
         "backgroundColor": "#FF6B35"
       },
       "package": "com.ustamm.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "$(EXPO_PUBLIC_GOOGLE_MAPS_API_KEY)"
+        }
+      },
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
@@ -38,30 +46,36 @@
         "WRITE_EXTERNAL_STORAGE",
         "RECEIVE_BOOT_COMPLETED",
         "VIBRATE"
-      ],
-      "config": {
-        "googleMaps": {
-          "apiKey": "$EXPO_PUBLIC_GOOGLE_MAPS_API_KEY"
-        }
-      }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-location",
-      "expo-image-picker",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Yakınındaki ustaları ve işleri görmek için konum bilginize ihtiyaç duyuyoruz."
+        }
+      ],
       [
         "expo-notifications",
         {
           "icon": "./assets/notification-icon.png",
           "color": "#FF6B35"
         }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Profil ve iş fotoğrafları eklemek için galeri erişimine ihtiyaç duyuyoruz.",
+          "cameraPermission": "Profil ve iş fotoğrafları çekmek için kameraya ihtiyaç duyuyoruz."
+        }
       ]
     ],
     "extra": {
       "eas": {
-        "projectId": "your-project-id"
+        "projectId": "your-eas-project-id"
       }
     }
   }

@@ -1,19 +1,19 @@
 import React from 'react';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { ActivityIndicator, View } from 'react-native';
 import { useAuth } from '../hooks/useAuth';
-import { AuthNavigator } from './AuthNavigator';
-import { CustomerNavigator } from './CustomerNavigator';
-import { TradesmanNavigator } from './TradesmanNavigator';
 import { UserRole } from '../types';
+import AuthNavigator from './AuthNavigator';
+import CustomerNavigator from './CustomerNavigator';
+import TradesmanNavigator from './TradesmanNavigator';
 import { COLORS } from '../constants';
 
-export const RootNavigator: React.FC = () => {
-  const { user, isLoading, isAuthenticated } = useAuth();
+export default function RootNavigator() {
+  const { user, initialized } = useAuth();
 
-  if (isLoading) {
+  if (!initialized) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: COLORS.background }}>
+      <View style={styles.loading}>
         <ActivityIndicator size="large" color={COLORS.primary} />
       </View>
     );
@@ -21,13 +21,22 @@ export const RootNavigator: React.FC = () => {
 
   return (
     <NavigationContainer>
-      {!isAuthenticated ? (
+      {!user ? (
         <AuthNavigator />
-      ) : user?.role === UserRole.CUSTOMER ? (
+      ) : user.role === UserRole.CUSTOMER ? (
         <CustomerNavigator />
       ) : (
         <TradesmanNavigator />
       )}
     </NavigationContainer>
   );
-};
+}
+
+const styles = StyleSheet.create({
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.background,
+  },
+});
